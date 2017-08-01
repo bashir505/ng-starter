@@ -1,0 +1,8 @@
+<p-fileUpload name="myfile[]" showUploadButton="false" multiple="true" (onRemove)="removeFile($event)" auto="true" maxFileSize="15000000" customUpload="true" (uploadHandler)="myUploader()">
+        <ng-template pTemplate="toolbar">
+            <button pButton type="button" icon="fa-remove" iconPos="left" class="ui-button-danger" label="Clear" (click)="removeAllFiles()" [disabled]="pFileUpload.files.length==0"></button>
+        </ng-template>   
+        <ng-template pTemplate="content">
+            <div>Total Upload Size: {{pFileUpload.maxFileSize}} bytes</div>
+        </ng-template>  
+</p-fileUpload>
